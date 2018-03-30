@@ -1,0 +1,24 @@
+[data_getall]
+cmd:
+curl -X GET server_url:port/api/data_getall
+example:
+curl -X GET http://localhost:3000/api/data_getall
+
+[data_add]
+cmd:
+curl -H "Content-Type: application/json" -X POST -d '{"temp":"value","humid":"value"}' server_url:port/api/data_add
+example:
+curl -H "Content-Type: application/json" -X POST -d '{"temp":"70","humid":"10"}'  http://localhost:3000/api/data_add
+
+[data_update]
+cmd:
+curl -H "Content-Type: application/json" -X POST -d '{"id":ObjectId,"temp":"value","humid":"value"}' server_url:port/api/data_update
+example:
+curl -H "Content-Type: application/json" -X POST -d '{"id":"5abaaad25197600983c041e4","temp":"50","humid":"50"}' http://localhost:3000/api/data_update
+
+[data_delete]
+cmd:
+curl -H "Content-Type: application/json" -X POST -d '{"id":ObjectId}' server_url:port/api/data_delete
+example:
+curl -H "Content-Type: application/json" -X POST -d '{"id":"5abaaad25197600983c041e4"}' http://localhost:3000/api/data_delete
+
